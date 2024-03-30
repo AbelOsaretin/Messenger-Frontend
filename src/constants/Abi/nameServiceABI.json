@@ -1,0 +1,94 @@
+[
+  {
+    "type": "function",
+    "name": "domains",
+    "inputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "outputs": [
+      { "name": "domainName", "type": "string", "internalType": "string" },
+      { "name": "avatarURI", "type": "string", "internalType": "string" },
+      { "name": "owner", "type": "address", "internalType": "address" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getDomainDetails",
+    "inputs": [
+      { "name": "_domainName", "type": "string", "internalType": "string" }
+    ],
+    "outputs": [
+      { "name": "", "type": "string", "internalType": "string" },
+      { "name": "", "type": "string", "internalType": "string" },
+      { "name": "", "type": "address", "internalType": "address" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "nameToAddress",
+    "inputs": [{ "name": "", "type": "string", "internalType": "string" }],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "registerNameService",
+    "inputs": [
+      { "name": "_domainName", "type": "string", "internalType": "string" },
+      { "name": "_avatarURI", "type": "string", "internalType": "string" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateDomainAvatar",
+    "inputs": [
+      { "name": "_domainName", "type": "string", "internalType": "string" },
+      { "name": "_avatarURI", "type": "string", "internalType": "string" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "AvatarUpdated",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "domainName",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "NameRegistered",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "domainName",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      }
+    ],
+    "anonymous": false
+  },
+  { "type": "error", "name": "DomainNotRegistered", "inputs": [] },
+  { "type": "error", "name": "NameAlreadyTaken", "inputs": [] },
+  { "type": "error", "name": "NotDomainOwner", "inputs": [] }
+]
